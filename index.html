@@ -1,9 +1,18 @@
 ---
 layout: default
 ---
-
-<div class="list-group">
+<div class="row">
     {% for post in site.posts %}
-    <a href="{{ post.url | prepend: site.baseurl }}" class="list-group-item">{{ post.date | date: "%b %-d, %Y" }} -- {{ post.title }}</a>
+
+    <main class="col-md-12 post">
+        <article>
+            <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+            <p>{{ post.content}}</p>
+            <hr />
+            <div>
+                {{ post.date | date: "%b %-d, %Y" }}
+            </div>
+        </article>
+    </main>
     {% endfor %}
 </div>
