@@ -5,8 +5,6 @@ date:   2016-03-23
 categories: algorithms
 ---
 
-**题目**
-
 Determine whether an integer is a palindrome. 
 
 _Do this without extra space._

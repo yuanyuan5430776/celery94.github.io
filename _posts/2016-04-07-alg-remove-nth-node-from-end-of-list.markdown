@@ -5,8 +5,6 @@ date:   2016-04-07
 categories: algorithms
 ---
 
-**题目**
-
 Given a linked list, remove the nth node from the end of list and return its head.
 
 For example,
