@@ -3,7 +3,6 @@ layout: page
 description: "Boilerplate of Hux Blog"
 ---
 
-<<<<<<< HEAD
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
@@ -22,19 +21,6 @@ description: "Boilerplate of Hux Blog"
     <p class="post-meta">
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
-=======
-    <main class="col-md-12 post">
-        <article>
-            <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-            <p>{{ post.excerpt }}</p>
-            <hr />
-            <div>
-                {{ post.date | date: "%b %-d, %Y" }}
-            </div>
-        </article>
-    </main>
-    {% endfor %}
->>>>>>> origin/master
 </div>
 <hr>
 {% endfor %}
