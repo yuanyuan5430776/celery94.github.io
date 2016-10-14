@@ -6,7 +6,7 @@ email: liuct94@gmail.com
 description: ""
 keyword: ""
 url: "http://celeryliu.com"              # your host, for absolute URL
-baseurl: "/celery94.github.io"         # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
@@ -48,7 +48,7 @@ kramdown:
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
-duoshuo_username: celeryliu
+duoshuo_username: 桃子_Celery
 # Share component is depend on Comment so we can NOT use share only.
 duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
