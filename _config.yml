@@ -6,7 +6,7 @@ email: liuct94@gmail.com
 description: ""
 keyword: ""
 url: "http://celeryliu.com"              # your host, for absolute URL
-baseurl: "/"         # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "/celery94.github.io"         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
