@@ -2,7 +2,8 @@
 layout: post
 title:  "求连续正整数和为n的所有组合"
 date:   2016-02-28 21:00:00 +0800
-categories: algorithms
+tags: 
+    - algorithms
 ---
 
 给定一个正整数n，求任意连续整数，该连续整数的和为给定的正整数n

@@ -2,7 +2,8 @@
 layout: post
 title:  "链表合并"
 date:   2016-03-05
-categories: algorithms
+tags: 
+    - algorithms
 ---
 
 已知两有序链表，求合并后链表

@@ -2,7 +2,8 @@
 layout: post
 title:  "Reverse Integer - Leetcode No.7"
 date:   2016-03-14
-categories: algorithms
+tags: 
+    - algorithms
 ---
 
 Reverse digits of an integer.

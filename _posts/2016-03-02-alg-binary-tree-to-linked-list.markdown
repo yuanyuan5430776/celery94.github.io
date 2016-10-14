@@ -2,7 +2,8 @@
 layout: post
 title:  "转换二叉树为双向链表"
 date:   2016-03-02 21:00:00 +0800
-categories: algorithms
+tags: 
+    - algorithms
 ---
 
 转换二叉树为双向链表

@@ -2,7 +2,8 @@
 layout: post
 title:  "取2个已排序数组的前K个数"
 date:   2016-03-01 21:00:00 +0800
-categories: algorithms
+tags: 
+    - algorithms
 ---
 
 已知两有序数组大小分别为m,n，获取前k个数，假设m＋n>k

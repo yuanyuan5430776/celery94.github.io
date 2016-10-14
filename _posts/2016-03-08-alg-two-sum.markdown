@@ -2,7 +2,8 @@
 layout: post
 title:  "Two Sum - Leetcode No.1"
 date:   2016-03-08
-categories: algorithms
+tags: 
+    - algorithms
 ---
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.

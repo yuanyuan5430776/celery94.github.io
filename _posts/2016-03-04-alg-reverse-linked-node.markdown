@@ -2,7 +2,8 @@
 layout: post
 title:  "单向链表的翻转"
 date:   2016-03-04 20:00:00 +0800
-categories: algorithms
+tags: 
+    - algorithms
 ---
 
 单向链表的翻转

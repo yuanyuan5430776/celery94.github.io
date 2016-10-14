@@ -2,7 +2,8 @@
 layout: post
 title:  "Valid Parentheses - Leetcode No.20"
 date:   2016-04-08
-categories: algorithms
+tags: 
+    - algorithms
 ---
 
 Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.

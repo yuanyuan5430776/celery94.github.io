@@ -2,7 +2,8 @@
 layout: post
 title:  "Palindrome Number - Leetcode No.9"
 date:   2016-03-23
-categories: algorithms
+tags: 
+    - algorithms
 ---
 
 Determine whether an integer is a palindrome. 

@@ -2,7 +2,8 @@
 layout: post
 title:  "String to Integer (atoi) - Leetcode No.8"
 date:   2016-03-22
-categories: algorithms
+tags: 
+    - algorithms
 ---
 
 Implement atoi to convert a string to an integer.

@@ -2,7 +2,8 @@
 layout: post
 title:  "Longest Palindromic Substring - Leetcode No.5"
 date:   2016-03-10
-categories: algorithms
+tags: 
+    - algorithms
 ---
 
 Given a string S, find the longest palindromic substring in S. 
