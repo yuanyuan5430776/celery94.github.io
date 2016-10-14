@@ -48,7 +48,7 @@ kramdown:
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
-duoshuo_username: 桃子_Celery
+duoshuo_username: celeryliu
 # Share component is depend on Comment so we can NOT use share only.
 duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
@@ -57,7 +57,7 @@ duoshuo_share: true                     # set to false if you want to use Commen
 
 # Analytics settings
 # Google Analytics
-ga_track_id: 'XXXXXXXX'            # Format: UA-xxxxxx-xx
+ga_track_id: 'UA-75120913-1'            # Format: UA-xxxxxx-xx
 ga_domain: http://celery94.github.io/
 
 
