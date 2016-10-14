@@ -2,7 +2,8 @@
 layout: post
 title:  "Using Async Task download file"
 date:   2016-02-02 10:00:00 +0800
-categories: android
+tags: 
+    - android
 ---
 
 不管是开发Windows的Winform，WPF还是Android的原生App，如果涉及到了UI的更新，都是推荐新开后台线程。
