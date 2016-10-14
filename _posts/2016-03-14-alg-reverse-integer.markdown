@@ -5,8 +5,6 @@ date:   2016-03-14
 categories: algorithms
 ---
 
-**题目**
-
 Reverse digits of an integer.
 
 Example1: x = 123, return 321

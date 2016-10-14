@@ -5,8 +5,6 @@ date:   2016-03-09
 categories: algorithms
 ---
 
-**题目**
-
 Given a string, find the length of the longest substring without repeating characters. 
 
 For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. 

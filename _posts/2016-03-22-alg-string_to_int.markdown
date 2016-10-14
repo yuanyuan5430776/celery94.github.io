@@ -5,8 +5,6 @@ date:   2016-03-22
 categories: algorithms
 ---
 
-**题目**
-
 Implement atoi to convert a string to an integer.
 
 **解答**
