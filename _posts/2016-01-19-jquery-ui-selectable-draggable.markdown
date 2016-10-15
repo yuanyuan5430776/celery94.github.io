@@ -3,7 +3,7 @@ layout: post
 title:  "Enable both selectable and draggable in jquery ui"
 date:   2016-01-21 15:00:00 +0800
 tags: 
-	- javascript
+    - javascript
 ---
 
 There's an issue that jquery ui can't enable both selectable and draggable, and there are some solutions.
