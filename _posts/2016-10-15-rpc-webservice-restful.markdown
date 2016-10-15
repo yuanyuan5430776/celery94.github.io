@@ -32,3 +32,22 @@ RESTful Web Service（Web API）是一个使用HTTP并且符合REST风格的Web�
 * 面向资源，每一个URI代表一种资源
 * 客户端和服务器之间传递
 * 客户端通过HTTP的四个动词，对服务器端资源进行操作
+
+
+## WCF是什么
+微软发展的一组数据通信的应用程序开发接口。
+相当于进化版的Web Service，支持的协议很多，比如TCP，HTTP，HTTPS，Named Pipes，MSMQ。最初也是基于SOAP的，数据格式是XML。
+WCF在后期添加了对REST迎合的功能，在WCF4.5有很大的增强，可以叫做WCF Web API。
+
+## ASP.NET Web API
+ASP.NET Web API是一个在.net framework上专门用来创建RESTful项目的。
+
+## WCF和ASP.NET Web API应该怎么选择
+
+* 当你想创建一个支持消息、消息队列、双工通信的服务时，你应该选择WCF
+
+* 当你想创建一个服务，可以用更快速的传输通道时，像TCP、Named Pipes或者甚至是UDP（在WCF4.5中）,在其他传输通道不可用的时候也可以支持HTTP时，你应该选择WCF。
+
+* 当你想创建一个基于HTTP的面向资源的服务并且可以使用HTTP的全部特征时（比如URIs、request/response头，缓存，版本控制，多种内容格式），你应该选择Web API
+
+* 当你想让你的服务用于浏览器、手机、iPhone和平板电脑时，你应该选择Web API
