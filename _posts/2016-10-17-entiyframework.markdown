@@ -20,7 +20,7 @@ EF5 新增的功能：
 EF6 新增的功能：
 
 * Async Query and Save
-* Interception/SQL logging: 非常实用的功能，可以用来记录执行时间较长的数据库操作，[示例TODO]()
+* Interception/SQL logging: 非常实用的功能，可以用来记录执行时间较长的数据库操作，[示例](/2016/10/18/ef-interception-sql-logging/)
 * Code First Insert/Update/Delete Stored Procedure Mapping
 
 效率的提高，详细的测试报告在这里：
