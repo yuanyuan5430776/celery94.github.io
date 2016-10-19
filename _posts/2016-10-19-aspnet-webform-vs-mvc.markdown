@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ASP.NET Web Form Compare with ASP.NET MVC"
-date:   2016-10-18
+date:   2016-10-19
 tags: 
     - Other
 ---
