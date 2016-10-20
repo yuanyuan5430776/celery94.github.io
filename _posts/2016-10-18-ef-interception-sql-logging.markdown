@@ -4,6 +4,7 @@ title:  "EF Interception/SQL logging"
 date:   2016-10-18
 tags: 
     - .net
+    - entity framework
 ---
 
 Entity framework Interception and SQL logging是在EF6.0之后新增的功能，能够非常方便查看SQL执行时间。

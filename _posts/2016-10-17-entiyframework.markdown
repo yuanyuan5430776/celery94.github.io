@@ -4,6 +4,7 @@ title:  "About entity framework"
 date:   2016-10-17
 tags: 
     - .net
+    - entity framework
 ---
 
 ## Entity Framework是什么
