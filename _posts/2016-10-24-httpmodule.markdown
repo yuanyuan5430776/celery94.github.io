@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "About Http Module"
-date:   2016-10-20
+date:   2016-10-24
 tags: 
     - .net
     - asp.net
@@ -46,7 +46,7 @@ HTTP 模块典型的用法包括：
 * 统计信息和日志记录。因为 HTTP 模块是在每次请求时调用的，所以，您可以将请求统计信息和日志记录信息收集到一个集中的模块中，而不是收集到各页中。
 * 自定义的页眉或页脚。因为您可以修改出站响应，所以可以在每一个页面或 XML Web services 响应中注入内容，如自定义的标头信息。
 
-## Http Module与Global.asax文件
+## Http Module与Global.asax的区别
 
 IIS初始化所有核心应用程序对象之后，将通过创建 HttpApplication 类的实例启动应用程序。
 如果应用程序具有 Global.asax 文件，则 ASP.NET 会创建 Global.asax 类（从 HttpApplication 类派生）的一个实例，并使用该派生类表示应用程序。
