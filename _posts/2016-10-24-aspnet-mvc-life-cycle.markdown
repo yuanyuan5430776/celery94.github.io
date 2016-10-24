@@ -74,5 +74,145 @@ public class UrlRoutingModule : IHttpModule
 {
     public UrlRoutingModule();
     public RouteCollection RouteCollection { get; set; }  //omitting the other details
+
 }
 {% endhighlight %}
+
+所以，现在我们知道UrlRoutingModule知道应用程序中所有的路线，因此它可以匹配请求的正确路线。
+这里要注意的主要事情是UrlRoutingModule选择第一个匹配的路由。
+一旦匹配在路由表中找到，扫描过程将停止。
+
+所以我们可以说，在我们的应用程序有10个Route和一个通用的Route，在这种情况下，后来添加的Route将永远不会被匹配，因为通用的Route总是会匹配。
+因此，我们需要在添加路由到路由集合时注意这一点。
+
+如果请求已经被路由集合中的任何一个路由匹配，那么之后添加的路由都不能来处理改请求。
+请注意，如果该请求与UrlRoutingModule中的任何路由不匹配，则它不回被MvcApplication处理。
+
+所以该阶段发生一下事情：
+
+> 在URLRoutingModule添加路由来处理路由
+
+## RouteHandler：MvcHandler的生成器
+
+正如我们已经看到，router的MapRoute方法附加了MvcRouteHandler的实例。
+MvcRouteHandler实现了IRouteHandler接口。
+
+MvcRouteHandler对象用于获取MvcHandler对象的引用，这是应用程序的HttpHandler。
+
+MvcRouteHandler创建后，要做一个事情是调用PostResolveRequestCache()方法。
+
+PostResolveRequestCache()方法是这样定义的：
+{% highlight C# %}
+public virtual void PostResolveRequestCache(HttpContextBase context) 
+{   
+    RouteData routeData = this.RouteCollection.GetRouteData(context);   
+    if (routeData != null)
+    {        
+        IRouteHandler routeHandler = routeData.RouteHandler;    
+ 
+        IHttpHandler httpHandler = routeHandler.GetHttpHandler(requestContext);
+    }
+}
+{% endhighlight %}
+
+PostResolveRequestCache方法执行了以下事情：
+
+* RouteCollection 有一个 GetRouteData() 方法。GetRouteData() 方法被调用，HttpContext是传入参数。
+* GetRouteData方法返回RouteData对象
+* routeData有一个RouterHandler属性，返回当前请求的IRouteHandler，这个便是MvcRouteHandler。
+* MvcRouteHandler的GetHttpHandler方法返回MvcHandler的引用。
+* 然后将控制委托给新的MvcHandler的实例。
+
+## MvcHandler
+
+MvcHandler是这样定义的：
+{% highlight C# %}
+pulic class MvcHandler : IHttpAsycHandler, IHttpHanlder, IRequiresSessionState
+{
+    public static readonly string MvcVersionHeaderName;
+
+    public MvcHanlder(RequestContext requestContext);
+}
+{% endhighlight %}
+
+正如看到的它是一个普通的的Http Handler。
+作为一个Http Handler必须实现ProcessRequest方法。
+
+ProcessRequest方法是这样定义的：
+
+{% highlight C# %}
+// Copyright (c) Microsoft Open Technologies, Inc.&lt;pre>
+// All rights reserved. See License.txt in the project root for license information.
+
+void IHttpHandler.ProcessRequest(HttpContext httpContext) 
+{
+    ProcessRequest(httpContext);
+}
+protected virtual void ProcessRequest(HttpContext httpContext) 
+{
+    HttpContextBase iHttpContext = new HttpContextWrapper(httpContext);
+    ProcessRequest(iHttpContext);
+}
+protected internal virtual void ProcessRequest(HttpContextBase httpContext) {
+    SecurityUtil.ProcessInApplicationTrust(() => {
+        IController controller;
+        IControllerFactory factory;
+        ProcessRequestInit(httpContext, out controller, out factory);
+        try
+        {
+            controller.Execute(RequestContext);
+        }
+        finally
+        {
+            factory.ReleaseController(controller);
+        }
+    });
+}
+{% endhighlight %}
+
+ProcessRequest方法调用了ProcessRequestInit，是这样定义的：
+
+{% highlight C# %}
+private void ProcessRequestInit(HttpContextBase httpContext, out IController controller, out IControllerFactory factory) {
+    // If request validation has already been enabled, make it lazy.
+
+    // This allows attributes like [HttpPost] (which looks
+
+    // at Request.Form) to work correctly without triggering full validation.
+
+    bool? isRequestValidationEnabled = ValidationUtility.IsValidationEnabled(HttpContext.Current);
+    if (isRequestValidationEnabled == true) {
+        ValidationUtility.EnableDynamicValidation(HttpContext.Current);
+    }
+    AddVersionHeader(httpContext);
+    RemoveOptionalRoutingParameters();
+    // Get the controller type
+
+    string controllerName = RequestContext.RouteData.GetRequiredString("controller");
+    // Instantiate the controller and call Execute
+
+    factory = ControllerBuilder.GetControllerFactory();
+    controller = factory.CreateController(RequestContext, controllerName);
+    if (controller == null) {
+        throw new InvalidOperationException(
+            String.Format(
+                CultureInfo.CurrentCulture,
+                MvcResources.ControllerBuilder_FactoryReturnedNull,
+                factory.GetType(),
+                controllerName));
+    }
+}
+{% endhighlight %}
+
+在ProcessRequest中发生了以下事情：
+
+* ProcessRequestInit方法被调用，创建了ControllerFactory
+* ControllerFactory创建了Controller
+* Controller的Excute方法被执行了
+
+## ControllerFactory：Controller的生产器
+
+
+
+
+
